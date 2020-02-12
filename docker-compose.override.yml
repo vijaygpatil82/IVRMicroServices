@@ -1,8 +1,18 @@
-version: '3.4'
+version: '3.0'
 
 services:
   accountinfoservice:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+    image: accountinfoservice
+    build:
+      context: .
+      dockerfile: AccountInfoService/Dockerfile
     ports:
-      - "80"
+      - "8081:80"
+
+  startinteractionservice:
+    image: startinteractionservice
+    build:
+      context: .
+      dockerfile: StartInteractionService/Dockerfile
+    ports:
+      - "8082:80"
