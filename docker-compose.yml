@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  accountinfoservice:
+    image: accountinfoservice
+    build:
+      context: .
+      dockerfile: AccountInfoService/Dockerfile
+    ports:
+      - "8081:80"
+
+  startinteractionservice:
+    image: startinteractionservice
+    build:
+      context: .
+      dockerfile: StartInteractionService/Dockerfile
+    ports:
+      - "8082:80"
